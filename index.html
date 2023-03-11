@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DZ27</title>
+</head>
+<body>
+
+<table>
+    <tbody></tbody>
+</table>
+
+<style>
+    table, td {
+        border: 3px solid #4db3a4;
+        border-collapse: collapse;
+    }
+    td {
+        padding: 10px;
+        text-align: center;
+        font-family: "Arial Black", sans-serif;
+        color: #594444;
+    }
+</style>
+
+
+<script>
+    const length = 10;
+    const tbody = document.querySelector('table > tbody');
+
+    Array.from({length}, () => {
+        const tr = document.createElement('tr');
+        tr.classList.add('line');
+        Array.from({length}, () => {
+            const n = 1 + Math.random() * 100 | 0;
+            const td = document.createElement('td');
+            td.classList.add('box');
+            td.innerText = n;
+            tr.appendChild(td);
+        });
+        tbody.appendChild(tr);
+    });
+</script>
+
+</body>
+</html>
